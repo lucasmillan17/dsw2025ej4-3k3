@@ -59,4 +59,20 @@ public class Persistencia {
         }
         return total;
     }
+    
+    public static void addAnimal(int edad, double peso, int numEspecie, int numSector, double valorFijo, String pais) throws InvalidPropertiesFormatException{
+        if(valorFijo!=0){
+            animales.add(new Herbivoro(edad, peso, especies.get(numEspecie), sectores.get(numSector), valorFijo, new Pais(pais)));
+        }else{
+            animales.add(new Carnivoro(edad, peso, especies.get(numEspecie), sectores.get(numSector), new Pais(pais)));
+        }
+    }
+    
+    public static Especie getEspecie(int indiceEspecie){
+        return especies.get(indiceEspecie);
+    }
+    
+    public static Sector getSector(int indiceSector){
+        return sectores.get(indiceSector);
+    }
 }

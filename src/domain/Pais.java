@@ -1,3 +1,4 @@
+
 package domain;
 
 public class Pais {
@@ -11,12 +12,18 @@ public class Pais {
 
     public Pais(String africa) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     public String getNombre() {
         return nombre;
     }
 
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     public String getCodigoIso() {
         return codigoIso;
     }
