@@ -1,29 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package domain;
 
-/**
- *
- * @author lucas
- */
 public class Pais {
-    
-    private String nombre;
+    private final String nombre;
+    private final String codigoIso;
 
-    public Pais(String nombre) {
-        this.nombre = (String) nombre;
+    public Pais(String nombre, String codigoIso) {
+        this.nombre = nombre;
+        this.codigoIso = codigoIso;
+    }
+
+    public Pais(String africa) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     public String getNombre() {
         return nombre;
     }
 
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     
-  
+    public String getCodigoIso() {
+        return codigoIso;
+    }
     
 }
+
+    
