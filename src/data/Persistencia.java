@@ -27,10 +27,6 @@ public class Persistencia {
     }
     
     private static void inicializarAnimales() throws InvalidPropertiesFormatException {
-        animales.add(new Carnivoro(5,250,especies.get(0), sectores.get(1)));
-        animales.add(new Carnivoro(2,180,especies.get(2), sectores.get(3)));
-        animales.add(new Herbivoro(3, 1020,especies.get(1), sectores.get(0), 170));
-        animales.add(new Herbivoro(8, 3800,especies.get(3), sectores.get(2), 320));
     }
 
     public static void inicializar() throws InvalidPropertiesFormatException{
@@ -57,5 +53,21 @@ public class Persistencia {
             total += animal.TieneAlimentacion(tipoAlimentacion) ? animal.calcularCantidadDeComida() : 0;
         }
         return total;
+    }
+    
+    public static void addAnimal(int edad, double peso, int numEspecie, int numSector, double valorFijo, String pais) throws InvalidPropertiesFormatException{
+        if(valorFijo!=0){
+            animales.add(new Herbivoro(edad, peso, especies.get(numEspecie), sectores.get(numSector), valorFijo, new Pais(pais)));
+        }else{
+            animales.add(new Carnivoro(edad, peso, especies.get(numEspecie), sectores.get(numSector), new Pais(pais)));
+        }
+    }
+    
+    public static Especie getEspecie(int indiceEspecie){
+        return especies.get(indiceEspecie);
+    }
+    
+    public static Sector getSector(int indiceSector){
+        return sectores.get(indiceSector);
     }
 }
