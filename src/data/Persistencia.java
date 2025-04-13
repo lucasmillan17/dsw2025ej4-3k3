@@ -28,10 +28,10 @@ public class Persistencia {
     }
     
     private static void inicializarAnimales() throws InvalidPropertiesFormatException {
-        animales.add(new Carnivoro(5,250,especies.get(0), sectores.get(1), new Pais("Sudafrica")));
-        animales.add(new Carnivoro(2,180,especies.get(2), sectores.get(3), new Pais("Albania")));
-        animales.add(new Herbivoro(3, 1020,especies.get(1), sectores.get(0), 170, new Pais("Egipto")));
-        animales.add(new Herbivoro(8, 3800,especies.get(3), sectores.get(2), 320, new Pais("Madagascar")));
+        animales.add(new Carnivoro(5,250,especies.get(0), sectores.get(1), new Pais("Sudafrica","123")));
+        animales.add(new Carnivoro(2,180,especies.get(2), sectores.get(3), new Pais("Albania","12345")));
+        animales.add(new Herbivoro(3, 1020,especies.get(1), sectores.get(0), 170, new Pais("Egipto","1234")));
+        animales.add(new Herbivoro(8, 3800,especies.get(3), sectores.get(2), 320, new Pais("Madagascar","123456")));
     }
 
     public static void inicializar() throws InvalidPropertiesFormatException{
@@ -60,11 +60,11 @@ public class Persistencia {
         return total;
     }
     
-    public static void addAnimal(int edad, double peso, int numEspecie, int numSector, double valorFijo, String pais) throws InvalidPropertiesFormatException{
+    public static void addAnimal(int edad, double peso, int numEspecie, int numSector, double valorFijo, Pais pais) throws InvalidPropertiesFormatException{
         if(valorFijo!=0){
-            animales.add(new Herbivoro(edad, peso, especies.get(numEspecie), sectores.get(numSector), valorFijo, new Pais(pais)));
+            animales.add(new Herbivoro(edad, peso, especies.get(numEspecie), sectores.get(numSector), valorFijo, pais));
         }else{
-            animales.add(new Carnivoro(edad, peso, especies.get(numEspecie), sectores.get(numSector), new Pais(pais)));
+            animales.add(new Carnivoro(edad, peso, especies.get(numEspecie), sectores.get(numSector), pais));
         }
     }
     

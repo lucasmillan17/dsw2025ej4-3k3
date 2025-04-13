@@ -92,8 +92,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarAnimalesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarAnimalesButtonActionPerformed
-      // AgregarAnimalesView agregar = new AgregarAnimalesView();
-       // agregar.setVisible(true);
+       AgregarAnimalesView agregar = new AgregarAnimalesView();
+       agregar.setVisible(true);
     }//GEN-LAST:event_AgregarAnimalesButtonActionPerformed
 
     private void ListarAnimalesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarAnimalesButtonActionPerformed

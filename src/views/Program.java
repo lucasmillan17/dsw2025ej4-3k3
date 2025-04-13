@@ -13,6 +13,5 @@ public class Program {
         Menu view = new Menu();
 
         view.setVisible(true);
-        view1.setVisible(true);
     }
 }
